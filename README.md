@@ -26,7 +26,7 @@
 
 ## Live Demo
 
-> Click here for the [demo](https://chrissiku.github.io/To-Do-List/)
+> Click here for the [demo](https://chrissiku.github.io/To-Do-List/dist)
 
 ## Getting Started
 
