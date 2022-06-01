@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -77,13 +78,23 @@ body {
   cursor: pointer;
 }
 
+.page-content .container .foot button {
+  padding: 10px 30px;
+  background-color: rgba(245, 11, 11, 0.575);
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
 .page-content .container .head form button {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
   padding: 10px 10px;
-  border: none;
   background: rgba(13, 231, 5, 0.445);
   border: 1px solid rgb(153, 153, 153);
   color: #fff;
@@ -140,7 +151,7 @@ body {
 
 .page-content .container .list-content ul li input[type="checkbox"] {
   position: absolute;
-  left: 0px;
+  left: 0;
   width: 25px;
   height: 25px;
   align-self: flex-start;
@@ -169,6 +180,7 @@ body {
 .page-content .container .list-content ul li span i.fa-pen-to-square {
   color: rgb(62, 238, 62);
 }
+
 .page-content .container .list-content ul li span i.fa-pen-to-square:hover {
   color: rgb(170, 241, 170);
 }
@@ -185,17 +197,6 @@ body {
   position: absolute;
   bottom: 0;
   padding: 20px;
-}
-
-.page-content .container .foot button {
-  padding: 10px 30px;
-  background-color: rgba(245, 11, 11, 0.575);
-  border: none;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
 }
 
 .page-content .container .foot button:hover {
