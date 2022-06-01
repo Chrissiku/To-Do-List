@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-dO list</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  <script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script></head>
+  <body>
+    <div class="page-content">
+      <div class="container">
+        <!-- * List Header -->
+        <div class="head">
+          <h1>My Todo List</h1>
+          <form>
+            <input type="text" placeholder="Add task here ..." />
+            <button type="submit">
+              Add<i class="fa-solid fa-circle-plus"></i>
+            </button>
+          </form>
+        </div>
+        <!-- * List content -->
+        <div class="list-content">
+          <ul id="list"></ul>
+        </div>
+        <!-- * List footer -->
+        <div class="foot">
+          <button type="button">Clear all Completed</button>
+        </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
