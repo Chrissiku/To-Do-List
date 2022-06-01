@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -7,7 +8,7 @@ module.exports = {
     index: './src/index.js',
   },
   devServer: {
-    static: './docs',
+    static: './dist',
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -16,7 +17,7 @@ module.exports = {
   ],
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'docs'),
+    path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
   optimization: {
