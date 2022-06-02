@@ -6,6 +6,8 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
 }
 
 body {
@@ -47,7 +49,7 @@ body {
 
 .page-content .container .head {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 20px;
@@ -59,14 +61,23 @@ body {
   line-height: 32px;
 }
 
-.page-content .container .head form {
+.page-content .container .list {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   gap: 1px;
 }
 
-.page-content .container .head form input {
+.page-content .container .list .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2px;
+  margin: 5px;
+}
+
+.page-content .container .list .item input {
   width: 200px;
   padding: 10px 10px;
   background: rgba(255, 255, 255, 0);
@@ -78,19 +89,9 @@ body {
   cursor: pointer;
 }
 
-.page-content .container .foot button {
-  padding: 10px 30px;
-  background-color: rgba(245, 11, 11, 0.575);
-  border: none;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.page-content .container .head form button {
+.page-content .container .list .item i {
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
@@ -100,24 +101,35 @@ body {
   color: #fff;
   border-radius: 0 50px 50px 0;
   font-size: 16px;
-  font-weight: 400;
   cursor: pointer;
 }
 
-.page-content .container .head form button i {
-  font-size: 16px;
+.page-content .container .list .item i:hover {
+  background: rgba(7, 131, 3, 0.808);
 }
 
-.page-content .container .list-content ul {
+.page-content .container .list .item i span {
+  font-size: 14px;
+}
+
+.page-content .container .list #item-list {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  height: 440px;
+}
+
+.page-content .container .list #item-list .task-items {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   gap: 5px;
   width: 300px;
-  height: 350px;
-  padding: 10px;
-  position: relative;
+  max-height: 380px;
+  padding: 15px;
   overflow: hidden;
   overflow-y: scroll;
 }
@@ -126,81 +138,107 @@ body {
   display: none;
 }
 
-.page-content .container .list-content ul li {
+.page-content .container .list #item-list .task-items .task {
   display: flex;
+  position: relative;
   justify-content: space-between;
   align-items: center;
   gap: 15px;
-  padding: 5px;
   width: 100%;
   background: rgba(14, 3, 109, 0.356);
   transition: all 0.3s ease-in-out;
 }
 
-.page-content .container .list-content ul li:nth-child(odd) {
+.page-content .container .list #item-list .task-items .task:nth-child(odd) {
   background: rgba(18, 67, 87, 0.527);
 }
 
-.page-content .container .list-content ul li:hover {
-  background: rgba(64, 124, 148, 0.527);
+.page-content .container .list #item-list .task-items .task input[type="text"] {
+  font-size: 15px;
+  font-weight: 400;
+  margin-left: 20px;
+  padding: 15px;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  text-align: center;
 }
 
-.page-content .container .list-content ul li:nth-child(odd):hover {
-  background: rgba(168, 215, 233, 0.527);
+.page-content
+  .container
+  .list
+  #item-list
+  .task-items
+  .task
+  input[type="text"]:focus {
+  outline: none;
+  background: rgba(29, 87, 18, 0.527);
+  width: fit-content;
 }
 
-.page-content .container .list-content ul li input[type="checkbox"] {
+.page-content
+  .container
+  .list
+  #item-list
+  .task-items
+  .task
+  input[type="checkbox"] {
   position: absolute;
-  left: 0;
+  left: 10px;
+  top: 10px;
   width: 25px;
   height: 25px;
   align-self: flex-start;
 }
 
-.page-content .container .list-content ul li p {
-  font-size: 14px;
-  font-weight: 300;
-  margin-left: 20px;
+.page-content
+  .container
+  .list
+  #item-list
+  .task-items
+  .task
+  input[type="checkbox"]:checked
+  + input[type="text"] {
+  text-decoration: line-through rgba(243, 227, 6, 0.664) 3px;
 }
 
-.page-content .container .list-content ul li span {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-}
-
-.page-content .container .list-content ul li span i {
+.page-content .container .list #item-list .task-items .task .fa-trash {
   font-size: 20px;
   cursor: pointer;
   transition: all 0.2s ease;
+  color: rgb(236, 106, 106);
+  margin: 0 10px;
+  transition: all 0.2s ease-in;
 }
 
-.page-content .container .list-content ul li span i.fa-pen-to-square {
-  color: rgb(62, 238, 62);
+.page-content .container .list #item-list .task-items .task .fa-trash:hover {
+  color: rgb(231, 20, 20);
 }
 
-.page-content .container .list-content ul li span i.fa-pen-to-square:hover {
-  color: rgb(170, 241, 170);
+.hidden {
+  display: none;
 }
 
-.page-content .container .list-content ul li span i.fa-calendar-xmark {
-  color: rgb(233, 102, 102);
-}
-
-.page-content .container .list-content ul li span i.fa-calendar-xmark:hover {
-  color: rgb(236, 175, 175);
-}
-
-.page-content .container .foot {
+.page-content .container .list #item-list .clear-completed {
+  display: flex;
   position: absolute;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
   bottom: 0;
   padding: 20px;
 }
 
-.page-content .container .foot button:hover {
-  background-color: rgba(131, 10, 10, 0.712);
+.page-content .container .list #item-list .clear-completed button {
+  background-color: rgba(187, 38, 38, 0.822);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  transition: all 0.2s ease-in;
+}
+
+.page-content .container .list #item-list .clear-completed button:hover {
+  background-color: rgba(136, 13, 13, 0.822);
 }
 
 @media only screen and (min-width: 768px) {
@@ -208,17 +246,14 @@ body {
     width: 400px;
   }
 
-  .page-content .container .list-content ul {
+  .page-content .container .list #item-list .task-items {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     gap: 5px;
     width: 380px;
-    height: 350px;
+    max-height: 350px;
     padding: 10px;
-    position: relative;
-    overflow: hidden;
-    overflow-y: scroll;
   }
 }
