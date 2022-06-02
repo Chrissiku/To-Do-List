@@ -157,32 +157,19 @@ body {
   font-size: 15px;
   font-weight: 400;
   margin-left: 20px;
-  padding: 15px;
+  padding: 15px 20px;
   background-color: transparent;
   border: none;
   color: #fff;
   text-align: center;
 }
 
-.page-content
-  .container
-  .list
-  #item-list
-  .task-items
-  .task
-  input[type="text"]:focus {
+.page-content .container .list #item-list .task-items .task input[type="text"]:focus {
   outline: none;
   background: rgba(29, 87, 18, 0.527);
-  width: fit-content;
 }
 
-.page-content
-  .container
-  .list
-  #item-list
-  .task-items
-  .task
-  input[type="checkbox"] {
+.page-content .container .list #item-list .task-items .task input[type="checkbox"] {
   position: absolute;
   left: 10px;
   top: 10px;
@@ -191,23 +178,15 @@ body {
   align-self: flex-start;
 }
 
-.page-content
-  .container
-  .list
-  #item-list
-  .task-items
-  .task
-  input[type="checkbox"]:checked
-  + input[type="text"] {
-  text-decoration: line-through rgba(243, 227, 6, 0.664) 3px;
+.page-content .container .list #item-list .task-items .task input[type="checkbox"]:checked + input[type="text"] {
+  text-decoration: line-through rgba(39, 114, 4, 0.664) 3px;
 }
 
 .page-content .container .list #item-list .task-items .task .fa-trash {
   font-size: 20px;
   cursor: pointer;
-  transition: all 0.2s ease;
   color: rgb(236, 106, 106);
-  margin: 0 10px;
+  margin: 0 20px;
   transition: all 0.2s ease-in;
 }
 
@@ -243,17 +222,20 @@ body {
 
 @media only screen and (min-width: 768px) {
   .page-content .container {
-    width: 400px;
+    width: 450px;
   }
 
   .page-content .container .list #item-list .task-items {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
     gap: 5px;
-    width: 380px;
-    max-height: 350px;
+    width: 400px;
+    max-height: 380px;
     padding: 10px;
+  }
+
+  .page-content .container .list #item-list .task-items .task input[type="text"] {
+    width: auto;
   }
 }
