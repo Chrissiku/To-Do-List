@@ -8,12 +8,11 @@ import "./style.css";
 import TaskList from "./modules/task.js";
 
 const tasks = document.querySelector(".task-items");
-
 const refresh = document.querySelector("#refersh");
-
 const addNewTask = document.querySelector("#new-item");
 const enter = document.querySelector("#enter");
 const enterKey = document.querySelector("#new-item");
+const clearAll = document.querySelector('#clear');
 
 let tasksList = JSON.parse(localStorage.getItem("tasks")) || [];
 
@@ -102,6 +101,33 @@ const addTask = () => {
     }
   });
 };
+
+// Update task list on checked checbox
+tasks.addEventListener('change', (event) => {
+  if (event.target.checked) {
+    event.target.nextElementSibling.classList.add('checked');
+    const index = event.target.id;
+    tasksList[index - 1].completed = true;
+    localStorage.setItem('tasks', JSON.stringify(tasksList));
+    displayTask();
+  } else {
+    event.target.nextElementSibling.classList.remove('checked');
+    const index = event.target.id;
+    tasksList[index - 1].completed = false;
+    localStorage.setItem('tasks', JSON.stringify(tasksList));
+    displayTask();
+  }
+});
+
+clearAll.addEventListener('click', () => {
+  const uncompletedTasks = tasksList.filter((element) => element.completed !== true);
+  const newTaskList = uncompletedTasks.map((elem, index) => {
+    elem.index = index + 1;
+    return elem;
+  });
+  localStorage.setItem('tasks', JSON.stringify(newTaskList));
+  window.location.reload();
+});
 
 window.addEventListener("DOMContentLoaded", () => {
   displayTask();
