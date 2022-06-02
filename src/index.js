@@ -119,6 +119,16 @@ tasks.addEventListener('change', (event) => {
   }
 });
 
+clearAll.addEventListener('click', () => {
+  const uncompletedTasks = tasksList.filter((element) => element.completed !== true);
+  const newTaskList = uncompletedTasks.map((elem, index) => {
+    elem.index = index + 1;
+    return elem;
+  });
+  localStorage.setItem('tasks', JSON.stringify(newTaskList));
+  window.location.reload();
+});
+
 window.addEventListener("DOMContentLoaded", () => {
   displayTask();
   addTask();
