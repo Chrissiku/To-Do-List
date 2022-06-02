@@ -102,6 +102,23 @@ const addTask = () => {
   });
 };
 
+// Update task list on checked checbox
+tasks.addEventListener('change', (event) => {
+  if (event.target.checked) {
+    event.target.nextElementSibling.classList.add('checked');
+    const index = event.target.id;
+    tasksList[index - 1].completed = true;
+    localStorage.setItem('tasks', JSON.stringify(tasksList));
+    displayTask();
+  } else {
+    event.target.nextElementSibling.classList.remove('checked');
+    const index = event.target.id;
+    tasksList[index - 1].completed = false;
+    localStorage.setItem('tasks', JSON.stringify(tasksList));
+    displayTask();
+  }
+});
+
 window.addEventListener("DOMContentLoaded", () => {
   displayTask();
   addTask();
