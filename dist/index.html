@@ -4,36 +4,41 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To-dO list</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    <title>To Do List</title>
+    <script
+      src="https://kit.fontawesome.com/985640b3e3.js"
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    ></script>
   <script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script></head>
+
   <body>
     <div class="page-content">
       <div class="container">
-        <!-- * List Header -->
+        <!-- Header -->
         <div class="head">
           <h1>My Todo List</h1>
-          <form>
-            <input type="text" placeholder="Add task here ..." />
-            <button type="submit">
-              Add<i class="fa-solid fa-circle-plus"></i>
-            </button>
-          </form>
+          <i id="refersh" class="fa-solid fa-rotate icon"></i>
         </div>
-        <!-- * List content -->
-        <div class="list-content">
-          <ul id="list"></ul>
-        </div>
-        <!-- * List footer -->
-        <div class="foot">
-          <button type="button">Clear all Completed</button>
+        <!-- List Items -->
+        <div class="list">
+          <!-- Insert task -->
+          <div class="item">
+            <input
+              id="new-item"
+              type="text"
+              name="to-do-task"
+              placeholder="Add a new task ..."
+            />
+            <i id="enter" class="fa-solid fa-circle-plus arrows enter-icon"
+              ><span>Add</span></i
+            >
+          </div>
+          <div id="item-list">
+            <div class="task-items"></div>
+            <div class="clear-completed">
+              <button id="clear" type="button">Clear All Completed</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
