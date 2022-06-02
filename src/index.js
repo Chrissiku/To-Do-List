@@ -8,12 +8,11 @@ import "./style.css";
 import TaskList from "./modules/task.js";
 
 const tasks = document.querySelector(".task-items");
-
 const refresh = document.querySelector("#refersh");
-
 const addNewTask = document.querySelector("#new-item");
 const enter = document.querySelector("#enter");
 const enterKey = document.querySelector("#new-item");
+const clearAll = document.querySelector('#clear');
 
 let tasksList = JSON.parse(localStorage.getItem("tasks")) || [];
 
